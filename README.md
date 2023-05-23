@@ -1,49 +1,40 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby Minimal TypeScript Starter
+  Hexocean - dishes form
 </h1>
 
-## 🚀 Quick start
+## 🚀 To setup a project
 
-1.  **Create a Gatsby site.**
+1.  **Download a repository.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+    You can use git to get repository to your computer,
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    git clone https://github.com/c3sare/hexocean-dishes
     ```
 
-3.  **Open the code and start customizing!**
+2.  **Get to project directory and install used libraries using npm.**
 
-    Your site is now running at http://localhost:8000!
+    You can do this using these commands in shell
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+    ```shell
+    cd hexocean-dishes
+    npm install
+    ```
 
-4.  **Learn more**
+3.  **Start project on localhost!**
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    To start project locally use this command
 
-## 🚀 Quick start (Netlify)
+    ```shell
+    gatsby develop
+    ```
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+    if you have a problem you need to install gatsby-cli globally using this command
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+    ```shell
+    npm install -g gatsby-cli
+    ```
+
+    after install use again running command
+
+    After run, site is available on this url http://localhost:8000

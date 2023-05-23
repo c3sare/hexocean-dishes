@@ -31,7 +31,6 @@ const OrderForm = () => {
   const dishType = watch("type");
 
   const handleSendData = async (data: FormInterface) => {
-    console.log(data);
     setLoading(true);
     const req = await fetch(
       "https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes",
@@ -53,9 +52,13 @@ const OrderForm = () => {
       const fields = Object.keys(res);
       console.log(res);
       for (const i in fields) {
-        const field = fields[i];
-        setError(`root.${field}`, {
-          message: res[field],
+        const fieldName = fields[i];
+        const message =
+          typeof res[fieldName] === "string"
+            ? res[fieldName]
+            : (res[fieldName] as unknown as string[]).join(" ");
+        setError(`root.${fieldName}`, {
+          message,
         });
       }
     } else {
@@ -144,6 +147,10 @@ const OrderForm = () => {
   const nameRegister = register("name", { required: "Name is required!" });
   const preparationTimeRegister = register("preparation_time", {
     required: "Preparation time is required!",
+    pattern: {
+      value: /(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)/,
+      message: "Time isn't correct!",
+    },
   });
   const typeRegister = register("type", { required: "Choose a dish type!" });
 
@@ -153,6 +160,7 @@ const OrderForm = () => {
       <Input register={nameRegister} type="text" errors={errors} label="Name" />
       <MaskInput
         mask="99:99:99"
+        placeholder="00:00:00"
         register={preparationTimeRegister}
         errors={errors}
         label="Preparation time"

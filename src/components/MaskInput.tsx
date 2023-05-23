@@ -8,6 +8,7 @@ interface MaskInputProps {
   errors: any;
   label: string;
   mask: string;
+  placeholder: string;
 }
 
 export default function MaskInput({
@@ -15,6 +16,7 @@ export default function MaskInput({
   errors,
   label,
   mask,
+  placeholder,
 }: MaskInputProps) {
   const name = register.name;
 
@@ -25,6 +27,7 @@ export default function MaskInput({
         id={name}
         mask={mask}
         {...register}
+        {...(placeholder ? { placeholder } : {})}
         {...(errors?.preparation_time ? { className: style.error } : {})}
       />
       {errors?.[name] && (
