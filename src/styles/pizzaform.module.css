@@ -1,0 +1,83 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pizzaForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pizzaForm > div:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 8px;
+  position: relative;
+}
+
+.pizzaForm .errorMessage {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  padding: 4px 8px;
+  background-color: #c03e3e;
+  color: white;
+  font-size: 10px;
+}
+
+.pizzaForm .errorMessage:after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #c03e3e transparent;
+}
+
+.pizzaForm input,
+.pizzaForm select {
+  border: 1px solid black;
+  border-radius: 0;
+  padding: 4px 8px;
+  width: 100%;
+  max-width: 200px;
+  outline: 0 !important;
+}
+
+.pizzaForm input:focus + .errorMessage,
+.pizzaForm input:hover + .errorMessage {
+  display: block;
+  z-index: 99;
+}
+
+.pizzaForm .error {
+  border: 1px solid #c03e3e;
+}
+
+.pizzaForm button {
+  border: 1px solid black;
+  border-radius: 0;
+  outline: 0 !important;
+  padding: 16px 8px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: white;
+}
